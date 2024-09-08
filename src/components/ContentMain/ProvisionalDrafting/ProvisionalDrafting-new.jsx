@@ -156,9 +156,7 @@ const ProvisionalDraftingnew = () => {
           html tags & not even single word is written without tag. And also give
           the content with proper heading and ordered list with proper alignment
           so that it looks good. And provided text must align to the left side.
-          And the provided content must be left aligned. And Provided content
-          must give a table using proper html table tags & this table must be
-          relevent to the provided content.
+          And the provided content must be left aligned. 
           <br />
           Start the content with first question, no extra content is needed
           <br />
