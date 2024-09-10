@@ -226,15 +226,15 @@ function UploadPDF() {
         formData
       );
       alert(response.data.message);
-
+      setLoading(false); // Stop loading immediately after alert
       setPdfText(response.data.text);
     } catch (error) {
       console.error(error);
       alert("Error uploading PDF");
-    } finally {
-      setLoading(false); // Stop loading
+      setLoading(false); // Stop loading in case of error
     }
   };
+
 
   const handleButtonClick = () => {
     const pdfContent = document.getElementById("pdfText").innerText;
