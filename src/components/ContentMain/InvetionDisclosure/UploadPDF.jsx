@@ -3,10 +3,14 @@ import axios from "axios";
 // import ReactMarkdown from "react-markdown";
 import "./uploadPDF.css";
 import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+
+// ********************
+import { OrbitProgress } from "react-loading-indicators";
+// ********************
 
 function UploadPDF() {
   const [file, setFile] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState("");
   const [response, setResponse] = useState("");
   const [question, setQuestion] = useState("");
@@ -43,6 +47,15 @@ function UploadPDF() {
   const handleChange = (event) => {
     setPdfText(event.target.value);
   };
+
+  // *************************
+
+  // Save ClaimsText to local storage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("answer", answer);
+  }, [answer]);
+
+  // *************************
 
   async function generateAnswer(e) {
     setGeneratingAnswer(true);
@@ -183,6 +196,7 @@ function UploadPDF() {
 
   const handleChanges1 = (html) => {
     setAnswer(html);
+    console.log(`This is answer One ${answer}`);
   };
 
   const handleChanges2 = (html) => {
@@ -205,16 +219,20 @@ function UploadPDF() {
     const formData = new FormData();
     formData.append("file", file);
 
+    setLoading(true); // Start loading
     try {
       const response = await axios.post(
-        "https://patent-wizard-backend-second.onrender.com/upload",
+        "https://patent-wizard-backend-techaltbig.onrender.com/upload",
         formData
       );
       alert(response.data.message);
+
       setPdfText(response.data.text);
     } catch (error) {
       console.error(error);
       alert("Error uploading PDF");
+    } finally {
+      setLoading(false); // Stop loading
     }
   };
 
@@ -270,6 +288,16 @@ function UploadPDF() {
         <button className="btn btn-primary" onClick={handleUpload}>
           Upload PDF
         </button>
+
+        {loading && (
+          <OrbitProgress
+            variant="spokes"
+            color="#32cd32"
+            size="large"
+            text="Uploading "
+            textColor="#bfa7a7"
+          />
+        )}
       </div>
 
       <div className="pdf-text-container" style={{ display: "none" }}>
@@ -290,8 +318,9 @@ function UploadPDF() {
           bold letters and nothing else.
           <br />
           Provide me four options of title of the invention from above provided
-          content & no extra content other that the titles is required. Give a
-          heading of "Invention title options are"
+          content & no extra content other that the titles is required. Start
+          with a heading of "Title of Invention" in the first line & inside h1
+          tag.
           <br />
           And provided content should only give complete answer using proper
           html tags & not even single word is written without tag. And also give
@@ -335,8 +364,6 @@ function UploadPDF() {
           />
         </div>
       </div>
-
-      {/* Additional sections for questions and answers can be structured similarly */}
 
       {/* Example structure for second question */}
       <div className="bg-gradient-to-r from-blue-50 to-blue-100 h-screen p-3 flex flex-col justify-center items-center">
@@ -416,10 +443,10 @@ function UploadPDF() {
           html tags & not even single word is written without tag. And also give
           the content with proper heading and ordered list with proper alignment
           so that it looks good. And the provided content must be left
-          aligned.Answer must start with a heading of "Prior Art" in h1 tag.
+          aligned.Answer must start with a heading of "Prior Art"
           <br />
           And provided content should give complete answer using proper html
-          tags.
+          tags also in h1 tag.
         </p>
         <form
           onSubmit={generateAnswer3}
@@ -478,7 +505,8 @@ function UploadPDF() {
           the content with proper heading and ordered list with proper alignment
           so that it looks good. And the provided content must be left aligned.
           <br />
-          Answer must start with a heading of "Novelty and Objectives" in h1 tag.
+          Answer must start with a heading of "Novelty and Objectives" also in
+          h1 tag.
         </p>
         <form
           onSubmit={generateAnswer4}
