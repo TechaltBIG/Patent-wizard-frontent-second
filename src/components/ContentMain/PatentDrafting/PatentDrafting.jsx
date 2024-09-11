@@ -104,7 +104,7 @@ const PatentDrafting = () => {
         onChange={handleChange}
         modules={modules}
       />
-      <button
+      {/* <button
         className="btn btn-success"
         onClick={handleDownload4}
         style={{
@@ -114,7 +114,7 @@ const PatentDrafting = () => {
         }}
       >
         Download as DOCX
-      </button>
+      </button> */}
       <button
         className="btn btn-primary"
         onClick={handlePrint4}
