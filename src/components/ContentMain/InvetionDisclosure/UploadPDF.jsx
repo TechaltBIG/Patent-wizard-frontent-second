@@ -293,7 +293,7 @@ function UploadPDF() {
           <OrbitProgress
             variant="spokes"
             color="#32cd32"
-            size="large"
+            size="small"
             text="Uploading "
             textColor="#bfa7a7"
           />
