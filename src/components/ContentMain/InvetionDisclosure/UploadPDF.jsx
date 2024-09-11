@@ -230,7 +230,7 @@ function UploadPDF() {
       setPdfText(response.data.text);
     } catch (error) {
       console.error(error);
-      alert("Error uploading PDF");
+      alert("Error uploading ...");
     } finally {
       setLoading(false); // Stop loading
     }
@@ -286,7 +286,7 @@ function UploadPDF() {
         <input type="file" accept=".pdf, .docx" onChange={handleFileChange} />
 
         <button className="btn btn-primary" onClick={handleUpload}>
-          Upload PDF
+          Upload
         </button>
 
         {loading && (
