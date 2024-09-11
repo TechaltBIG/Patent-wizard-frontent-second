@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { Document, Packer, Paragraph, TextRun } from "docx";
-import ContentTop from "../../ContentTop/ContentTop";
 
 const PatentDrafting = () => {
   const [editorContent, setEditorContent] = useState("");
@@ -96,7 +95,6 @@ const PatentDrafting = () => {
 
   return (
     <div>
-      <ContentTop />
       <h1 className="head-stl" style={{ color: "#36718b" }}>
         Patent Drafting
       </h1>
