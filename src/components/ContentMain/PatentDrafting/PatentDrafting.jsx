@@ -5,7 +5,6 @@ import { Document, Packer, Paragraph, TextRun } from "docx";
 
 const PatentDrafting = () => {
   const [editorContent, setEditorContent] = useState("");
-  const [reloadFlag, setReloadFlag] = useState(false);
 
   const quillRef = React.createRef();
 
@@ -15,14 +14,6 @@ const PatentDrafting = () => {
     if (storedProvisionalText && storedClaimsText) {
       setEditorContent(`${storedProvisionalText}\n\n${storedClaimsText}`);
     }
-  }, [reloadFlag]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setReloadFlag((prev) => !prev); // Toggle the flag to trigger re-render
-    }, 2000);
-
-    return () => clearInterval(interval); // Clean up the interval on component unmount
   }, []);
 
   const handleChange = (html) => {
