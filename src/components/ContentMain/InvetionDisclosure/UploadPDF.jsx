@@ -230,7 +230,7 @@ function UploadPDF() {
       setPdfText(response.data.text);
     } catch (error) {
       console.error(error);
-      alert("Error uploading ...");
+      alert("Error uploading PDF");
     } finally {
       setLoading(false); // Stop loading
     }
@@ -367,24 +367,45 @@ function UploadPDF() {
 
       {/* Example structure for second question */}
       <div className="bg-gradient-to-r from-blue-50 to-blue-100 h-screen p-3 flex flex-col justify-center items-center">
-        <h3 style={{ color: "#36718b" }}>Technical Problem</h3>
+        <h3 style={{ color: "#36718b" }}>Background of the Invention</h3>
         <p style={{ fontSize: "18px" }}>
           Please indicate the occasion for making this invention. Describe the
-          general problem statement. In which domains this invention might be
-          applied?
+          general problem statement and which prior art, already known to you
+          that forms the starting of your invention?
         </p>
         <p id="secondQuestion" style={{ display: "none" }}>
-          Provide me the content for Technical problems faced while working on
-          the invention from the above provided content. Provided content should
-          only contain the content related to Technical problems faced while
-          working on the invention and nothing else. And also give the content
-          with proper heading and ordered list with proper alignment so that it
-          looks good.
+          From above provided content generate detailed content for 1.Technical
+          Problems faced while doing the Invention And 2. Prior Arts of the
+          Invention. for drafting the patent for above invention. And provided
+          content should only give complete answer using proper html tags & not
+          even single word is written without tag.
           <br />
-          And provided content should only give complete answer using proper
-          html tags & not even single word is written without tag. And also give
-          the content with proper heading and ordered list with proper alignment
-          so that it looks good. And the provided content must be left aligned.
+          Inside the first answer provide the content for Technical problems
+          faced while doing the invention from the above provided content.
+          Provided content should only contain the content related to Technical
+          problems faced while working on the invention and nothing else. And
+          also give the content with proper heading and ordered list with proper
+          alignment so that it looks good. Heading for first answer must be
+          "Technical problems" and it should be in bold letters.
+          <br />
+          Inside the second answer the provide the content related to "Which
+          prior art, already known to you that forms the starting of your
+          invention? For example known patents, research articles, known
+          products." from the above provided content. The most important thing
+          is that provided content should also contain 10 similar researches
+          data of Prior researches done in USPTO or WIPO which are very much
+          similar to my invention. Provided content should only contain the
+          content related to prior art and nothing else. And also give the
+          content with proper heading and ordered list with proper alignment so
+          that it looks good. Heading for second answer must be "Prior Arts" and
+          it should be in bold letters.
+          <br />
+          Don't use images & tables.
+          <br />
+          And proper inline css must be used to make the UI good looking. Proper
+          margin padding must be used.
+          <br />
+          Provided content should be very must accurate and left aligned.
         </p>
         <form
           onSubmit={generateAnswer2}
@@ -424,7 +445,7 @@ function UploadPDF() {
       </div>
 
       {/* Example structure for third question */}
-      <div className="bg-gradient-to-r from-blue-50 to-blue-100 h-screen p-3 flex flex-col justify-center items-center">
+      {/* <div className="bg-gradient-to-r from-blue-50 to-blue-100 h-screen p-3 flex flex-col justify-center items-center">
         <h3 style={{ color: "#36718b" }}>Prior Art</h3>
         <p style={{ fontSize: "18px" }}>
           Which prior art, already known to you that forms the starting of your
@@ -476,14 +497,14 @@ function UploadPDF() {
           className="w-full md:w-3/3 lg:w-2/2 xl:w-3/3  rounded-lg bg-white shadow-lg transition-all duration-500 transform hover:scale-105"
           style={{ overflowY: "scroll" }}
         >
-          {/* <ReactMarkdown className="p-4">{answer3}</ReactMarkdown> */}
+          
           <ReactQuill
             value={answer3}
             onChange={handleChanges3}
             modules={modules}
           />
         </div>
-      </div>
+      </div> */}
 
       {/* Example structure for fourth question */}
       <div className="bg-gradient-to-r from-blue-50 to-blue-100 h-screen p-3 flex flex-col justify-center items-center">
