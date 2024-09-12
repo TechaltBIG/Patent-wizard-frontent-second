@@ -211,7 +211,7 @@ const ProvisionalDraftingnew = () => {
             modules={modules}
           />
           {/* <button onClick={handleDownload}>Download</button> */}
-          <button
+          {/* <button
             className="btn btn-primary"
             onClick={handlePrint5}
             style={{
@@ -221,7 +221,7 @@ const ProvisionalDraftingnew = () => {
             }}
           >
             Print
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
