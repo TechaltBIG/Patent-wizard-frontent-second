@@ -26,7 +26,7 @@ const Sidebar = () => {
               <img src={ personsImgs.person_two } alt="profile image" />
           </div>
           <span className="info-name">alice-doe</span> */}
-        <img src={LOGO} alt="Logo img" style={{ width: "180px" }} />
+        <img src={LOGO} alt="Logo img" style={{ width: "140px" }} />
       </div>
 
       <nav className="navigation">
