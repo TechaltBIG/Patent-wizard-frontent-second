@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 // import { personsImgs } from '../../utils/images';
 import LOGO from "../../assets/images/logo/logo-image.png";
-import { navigationLinks } from "../../data/data";
+// import { navigationLinks } from "../../data/data";
 import "./Sidebar.css";
 import { useContext } from "react";
 import { SidebarContext } from "../../context/sidebarContext";
@@ -22,32 +22,104 @@ const Sidebar = () => {
   return (
     <div className={`sidebar ${sidebarClass}`}>
       <div className="user-info">
-        {/* <div className="info-img img-fit-cover">
-              <img src={ personsImgs.person_two } alt="profile image" />
-          </div>
-          <span className="info-name">alice-doe</span> */}
         <img src={LOGO} alt="Logo img" style={{ width: "140px" }} />
       </div>
 
-      <nav className="navigation">
+      <nav classname="navigation" style={{ marginTop: "40px" }}>
         <ul className="nav-list">
-          {navigationLinks.map((navigationLink) => (
-            <li className="nav-item" key={navigationLink.id}>
-              <a
-                href="#"
-                className={`nav-link ${
-                  navigationLink.id === activeLinkIdx ? "active" : null
-                }`}
-              >
-                <img
-                  src={navigationLink.image}
-                  className="nav-link-icon"
-                  alt={navigationLink.title}
-                />
-                <span className="nav-link-text">{navigationLink.title}</span>
-              </a>
-            </li>
-          ))}
+          <li className="nav-item">
+            <a href="#" className="nav-link active">
+              <img
+                src="/src/assets/icons/home.svg"
+                className="nav-link-icon"
+                alt="Dashboard"
+              />
+              <span className="nav-link-text">IDF</span>
+            </a>
+          </li>
+
+          <li className="nav-item">
+            <a href="#" className="nav-link null">
+              <img
+                src="/src/assets/icons/wallet.svg"
+                className="nav-link-icon"
+                alt="Provisional Drafting"
+              />
+              <span className="nav-link-text">Provisional Specifications</span>
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="#" className="nav-link null">
+              <img
+                src="/src/assets/icons/bills.svg"
+                className="nav-link-icon"
+                alt="Claims Drafting"
+              />
+              <span className="nav-link-text">Claims</span>
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="#" className="nav-link null">
+              <img
+                src="/src/assets/icons/bills.svg"
+                className="nav-link-icon"
+                alt="Claims Drafting"
+              />
+              <span className="nav-link-text">Abstract</span>
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="#" className="nav-link null">
+              <img
+                src="/src/assets/icons/bills.svg"
+                className="nav-link-icon"
+                alt="Claims Drafting"
+              />
+              <span className="nav-link-text">Drawings</span>
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="#" className="nav-link null">
+              <img
+                src="/src/assets/icons/report.svg"
+                className="nav-link-icon"
+                alt="Patent Drafting"
+              />
+              <span className="nav-link-text">Complete Patent Drafting</span>
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="#" className="nav-link null">
+              <img
+                src="/src/assets/icons/budget.svg"
+                className="nav-link-icon"
+                alt="5 Easy Steps"
+              />
+              <span className="nav-link-text">User Guide</span>
+            </a>
+          </li>
+
+          <li className="nav-item">
+            <a href="#" className="nav-link null">
+              <img
+                src="/src/assets/icons/wealth.svg"
+                className="nav-link-icon"
+                alt="What is IDF?"
+              />
+              <span className="nav-link-text">What is IDF?</span>
+            </a>
+          </li>
+
+          <li className="nav-item">
+            <a href="#" className="nav-link null">
+              <img
+                src="/src/assets/icons/wallet.svg"
+                className="nav-link-icon"
+                alt="Contact Us"
+              />
+              <span className="nav-link-text">Contact Us</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
