@@ -529,7 +529,7 @@ function UploadPDF() {
           Existing Solutions 3. Give a list of objectives/advantages that you
           achieve because of the novel aspects of the invention . And also give
           the content with proper heading and ordered list with proper alignment
-          so that it looks good.
+          so that it looks good. Provided content should be more than 500 words.
           <br />
           And provided content should only give complete answer using proper
           html tags & not even single word is written without tag. And also give
