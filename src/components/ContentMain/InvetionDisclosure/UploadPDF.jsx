@@ -373,7 +373,7 @@ function UploadPDF() {
           general problem statement and which prior art, already known to you
           that forms the starting of your invention?
         </p>
-        <p id="secondQuestion" style={{ display: "none" }}>
+       <p id="secondQuestion" style={{ display: "none" }}>
           From above provided content generate detailed content for 1.Technical
           Problems faced while doing the Invention And 2. Prior Arts of the
           Invention. for drafting the patent for above invention. And provided
@@ -382,11 +382,17 @@ function UploadPDF() {
           <br />
           Inside the first answer provide the content for Technical problems
           faced while doing the invention from the above provided content.
-          Provided content should only contain the content related to Technical
-          problems faced while working on the invention and nothing else. And
-          also give the content with proper heading and ordered list with proper
+          Provided content should only contain the content related to 1.
+          Specific Circumstances or Occasions Prompting the Need for This
+          Invention 2. General Problems the Invention Aims to Solve 3. Domains
+          or Fields Where This Invention Could Potentially Be Applied 4.
+          Technical Features of the invention 5. Scientific Principles. And also
+          give the content with proper heading and ordered list with proper
           alignment so that it looks good. Heading for first answer must be
-          "Technical problems" and it should be in bold letters.
+          "Technical problems" and it should be in bold letters. Technical
+          Problems content should be around 2500 words and very detailed.And
+          also give the content with proper heading and ordered list with proper
+          alignment so that it looks good.
           <br />
           Inside the second answer the provide the content related to "Which
           prior art, already known to you that forms the starting of your
@@ -398,7 +404,8 @@ function UploadPDF() {
           content related to prior art and nothing else. And also give the
           content with proper heading and ordered list with proper alignment so
           that it looks good. Heading for second answer must be "Prior Arts" and
-          it should be in bold letters.
+          it should be in bold letters. And also give the content with proper
+          heading and ordered list with proper alignment so that it looks good.
           <br />
           Don't use images & tables.
           <br />
