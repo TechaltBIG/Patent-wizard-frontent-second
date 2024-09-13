@@ -520,13 +520,16 @@ function UploadPDF() {
           What is the novel aspect of your invention and how is it solving the
           drawbacks found in existing prior art?
         </p>
-        <p id="fourthQuestion" style={{ display: "none" }}>
+         <p id="fourthQuestion" style={{ display: "none" }}>
           Provide me the content for "What is the novel aspect of your invention
           and how is it solving the drawbacks found in existing prior art?" from
-          the above provided content. Provided content should only contain the
-          content related to Novelty and Objectives and nothing else. And also
-          give the content with proper heading and ordered list with proper
-          alignment so that it looks good.
+          the above provided content. Provided content should also contain the
+          content related to 1. Novel Aspects or Innovations Introduced by the
+          Invention 2. Contribution to Overcoming Drawbacks or Limitations of
+          Existing Solutions 3. Give a list of objectives/advantages that you
+          achieve because of the novel aspects of the invention . And also give
+          the content with proper heading and ordered list with proper alignment
+          so that it looks good.
           <br />
           And provided content should only give complete answer using proper
           html tags & not even single word is written without tag. And also give
